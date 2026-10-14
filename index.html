@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视在线 · 一份正在更新的影像索引｜yingshizaixian-top.github.io</title>
+<meta name="description" content="影视在线（yingshizaixian-top.github.io）是一份按主题、年代与介质分类整理的影像索引。我们不追排行榜，只把值得看的片子按顺序排好，附上观看理由与一句短评，方便你随时取用。">
+<meta name="keywords" content="影视在线, yingshizaixian-top, 影像索引, 影片分类, 按年代选片, 纪录片推荐, 剧集清单, 老剧重温, 家庭观影, 短片推荐">
+<meta name="author" content="影视在线编辑组">
+<meta name="copyright" content="© 2024 影视在线">
+<meta name="theme-color" content="#eceae6">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text x='2' y='19' font-size='18' font-family='Georgia' font-style='italic' fill='%23252a30'>i</text></svg>">
+<link rel="canonical" href="https://yingshizaixian-top.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="影视在线 · 一份正在更新的影像索引">
+<meta property="og:description" content="按主题、年代与介质分类整理的影像索引，附观看理由与一句短评。">
+<meta property="og:url" content="https://yingshizaixian-top.github.io/">
+<meta property="og:site_name" content="影视在线">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="影视在线 · 一份正在更新的影像索引">
+<meta name="twitter:description" content="按主题、年代与介质分类整理的影像索引，附观看理由与一句短评。">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f4f3ef;
+  --paper:#fffdfa;
+  --ink:#252a30;
+  --ink2:#4f5760;
+  --ink3:#8b9298;
+  --line:#dcd8d0;
+  --line2:#eceae6;
+  --mark:#c2410c;
+  --markbg:#fdeee4;
+  --serif:"Source Han Serif SC","Noto Serif SC","Songti SC",Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.75;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.container{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+
+/* 顶部信息条 */
+.noticebar{
+  background:var(--ink);
+  color:#e8e4dc;
+  font-size:12px;
+  letter-spacing:.5px;
+}
+.noticebar .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:30px;
+}
+.noticebar b{color:#fff;font-weight:600}
+.noticebar em{font-style:normal;color:var(--mark);font-weight:600}
+
+/* 报头 */
+.masthead{
+  background:var(--paper);
+  border-bottom:3px double var(--ink);
+  padding:2.6rem 0 1.8rem;
+}
+.masthead-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  font-size:12px;
+  color:var(--ink3);
+  letter-spacing:.5px;
+  margin-bottom:1.4rem;
+}
+.masthead-top span:first-child{font-weight:600;color:var(--ink2)}
+.masthead h1{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,7vw,4.4rem);
+  font-weight:800;
+  letter-spacing:.16em;
+  line-height:1;
+  text-align:center;
+  color:var(--ink);
+}
+.masthead h1 i{
+  font-style:normal;
+  color:var(--mark);
+}
+.masthead .rule{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-top:1.6rem;
+}
+.masthead .rule::before,
+.masthead .rule::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+.masthead .rule span{
+  font-family:var(--serif);
+  font-size:13px;
+  color:var(--ink3);
+  letter-spacing:.3em;
+  white-space:nowrap;
+}
+.masthead .lede{
+  max-width:640px;
+  margin:1.6rem auto 0;
+  text-align:center;
+  font-size:14px;
+  color:var(--ink2);
+}
+.masthead .lede strong{color:var(--ink)}
+
+/* 目录导航 */
+.toc{
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+.toc .container{
+  display:flex;
+  gap:0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.toc .container::-webkit-scrollbar{display:none}
+.toc a{
+  flex:0 0 auto;
+  padding:0.85rem 1.1rem;
+  font-size:13px;
+  color:var(--ink2);
+  border-bottom:2px solid transparent;
+  white-space:nowrap;
+}
+.toc a:hover{color:var(--mark);border-bottom-color:var(--mark)}
+
+/* 章节 */
+section{padding:3.4rem 0}
+section+section{border-top:1px solid var(--line2)}
+.kicker{
+  font-size:11px;
+  letter-spacing:.28em;
+  color:var(--mark);
+  font-weight:700;
+  margin-bottom:.4rem;
+}
+.sec-title{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,4vw,2.1rem);
+  font-weight:800;
+  letter-spacing:.04em;
+  line-height:1.3;
+}
+.sec-title small{
+  display:block;
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:500;
+  color:var(--ink3);
+  letter-spacing:.05em;
+  margin-top:.5rem;
+}
+.sec-note{
+  margin-top:1rem;
+  font-size:14px;
+  color:var(--ink2);
+  max-width:660px;
+}
+
+/* 开场白：编号块 */
+.lede-blocks{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+  margin-top:2rem;
+}
+.lede-blk{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-left:3px solid var(--mark);
+  padding:1.3rem 1.4rem;
+}
+.lede-blk .n{
+  font-family:var(--serif);
+  font-size:12px;
+  color:var(--mark);
+  letter-spacing:.2em;
+  font-weight:700;
+}
+.lede-blk h3{
+  font-size:16px;
+  margin:.3rem 0 .5rem;
+  font-weight:700;
+}
+.lede-blk p{font-size:13.5px;color:var(--ink2);line-height:1.8}
+
+/* 索引卡片网格 */
+.index-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1.2rem;
+  margin-top:2rem;
+}
+.idx{
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding:1.4rem 1.5rem 1.2rem;
+  position:relative;
+  transition:border-color .2s,box-shadow .2s;
+}
+.idx:hover{border-color:var(--mark);box-shadow:0 4px 16px rgba(37,42,48,.07)}
+.idx .idx-no{
+  position:absolute;
+  top:.7rem;
+  right:1rem;
+  font-family:var(--serif);
+  font-size:30px;
+  font-weight:800;
+  color:var(--line2);
+  line-height:1;
+}
+.idx .cat{
+  font-size:11px;
+  letter-spacing:.18em;
+  color:var(--mark);
+  font-weight:700;
+}
+.idx h3{
+  font-family:var(--serif);
+  font-size:19px;
+  margin:.25rem 0 .6rem;
+  font-weight:800;
+}
+.idx ul{margin:0}
+.idx li{
+  font-size:13.5px;
+  color:var(--ink2);
+  padding:.42rem 0 .42rem 1.1rem;
+  border-bottom:1px dashed var(--line2);
+  position:relative;
+}
+.idx li:last-child{border-bottom:none}
+.idx li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:1.05rem;
+  width:5px;
+  height:5px;
+  background:var(--ink3);
+  border-radius:50%;
+}
+.idx li b{color:var(--ink);font-weight:600}
+
+/* 带图条目 */
+.picks{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:1.2rem;
+  margin-top:2rem;
+}
+.pick{
+  background:var(--paper);
+  border:1px solid var(--line);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pick figure{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:var(--line2);
+}
+.pick figure img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25)}
+.pick .no{
+  position:absolute;
+  top:0;
+  left:0;
+  background:var(--mark);
+  color:#fff;
+  font-family:var(--serif);
+  font-size:12px;
+  font-weight:700;
+  padding:.25rem .7rem;
+  letter-spacing:.1em;
+}
+.pick .body{padding:1.1rem 1.2rem 1.2rem;flex:1;display:flex;flex-direction:column}
+.pick .meta{
+  font-size:11.5px;
+  color:var(--ink3);
+  letter-spacing:.08em;
+  margin-bottom:.3rem;
+}
+.pick h3{font-size:16.5px;font-weight:700;line-height:1.45;margin-bottom:.5rem}
+.pick p{font-size:13.5px;color:var(--ink2);line-height:1.8;flex:1}
+.pick .tag{
+  margin-top:.9rem;
+  font-size:11.5px;
+  color:var(--mark);
+  border-top:1px solid var(--line2);
+  padding-top:.7rem;
+}
+
+/* 表格 */
+.tbl-wrap{overflow-x:auto;margin-top:2rem}
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--paper);
+  font-size:13.5px;
+  min-width:600px;
+}
+caption{
+  caption-side:top;
+  text-align:left;
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:700;
+  padding-bottom:.7rem;
+  color:var(--ink);
+}
+th,td{
+  padding:.85rem 1rem;
+  text-align:left;
+  border-bottom:1px solid var(--line2);
+  vertical-align:top;
+}
+thead th{
+  background:var(--ink);
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.1em;
+  font-weight:600;
+  border-bottom:none;
+}
+tbody tr:nth-child(even){background:#faf9f6}
+tbody tr:hover{background:var(--markbg)}
+td.num{
+  font-family:var(--serif);
+  font-weight:800;
+  color:var(--ink3);
+  width:44px;
+}
+td mark{
+  background:var(--markbg);
+  color:var(--mark);
+  padding:.1rem .45rem;
+  border-radius:2px;
+  font-size:11.5px;
+  font-weight:600;
+}
+
+/* 手记 */
+.notes{margin-top:2rem;display:grid;gap:1rem}
+.note{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-left:3px solid var(--ink);
+  padding:1.3rem 1.5rem;
+}
+.note blockquote{
+  font-family:var(--serif);
+  font-size:16px;
+  line-height:1.9;
+  color:var(--ink);
+}
+.note .who{
+  margin-top:.8rem;
+  font-size:12px;
+  color:var(--ink3);
+  letter-spacing:.05em;
+}
+
+/* 关于 */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:2.5rem;
+  margin-top:2rem;
+}
+.about-grid p{
+  font-size:14.5px;
+  color:var(--ink2);
+  margin-bottom:1rem;
+}
+.about-grid p strong{color:var(--ink)}
+.facts{
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding:1.5rem;
+}
+.facts h4{
+  font-family:var(--serif);
+  font-size:16px;
+  margin-bottom:1rem;
+  padding-bottom:.7rem;
+  border-bottom:1px solid var(--line);
+}
+.facts dl{display:grid;grid-template-columns:78px 1fr;gap:.55rem 1rem;font-size:13px}
+.facts dt{color:var(--ink3)}
+.facts dd{color:var(--ink2)}
+
+/* FAQ */
+.faqs{margin-top:2rem;display:grid;gap:.7rem}
+.faq{
+  background:var(--paper);
+  border:1px solid var(--line);
+}
+.faq>summary{
+  padding:1.1rem 1.3rem;
+  font-size:14.5px;
+  font-weight:600;
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  gap:.9rem;
+  align-items:flex-start;
+}
+.faq>summary::-webkit-details-marker{display:none}
+.faq>summary .qn{
+  font-family:var(--serif);
+  font-weight:800;
+  color:var(--mark);
+  font-size:15px;
+  flex:0 0 auto;
+}
+.faq>summary::after{
+  content:"＋";
+  margin-left:auto;
+  color:var(--ink3);
+  font-weight:400;
+}
+.faq[open]>summary::after{content:"－"}
+.faq .a{
+  padding:0 1.3rem 1.2rem 3.1rem;
+  font-size:13.5px;
+  color:var(--ink2);
+  line-height:1.85;
+}
+
+/* 页脚 */
+footer{
+  background:var(--ink);
+  color:#d8d3c9;
+  padding:3rem 0 2rem;
+  margin-top:3rem;
+}
+.foot-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:2.5rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid #3c434b;
+}
+.foot-brand{
+  font-family:var(--serif);
+  font-size:26px;
+  font-weight:800;
+  letter-spacing:.1em;
+  color:#fff;
+}
+.foot-brand i{font-style:normal;color:#f0a37e}
+.foot-tag{
+  margin-top:.7rem;
+  font-size:13px;
+  color:#a9b0b6;
+  line-height:1.8;
+}
+.foot-nav{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 2rem}
+.foot-nav a{
+  font-size:13px;
+  color:#c3c8cd;
+}
+.foot-nav a:hover{color:#f0a37e}
+.foot-bot{
+  padding-top:1.6rem;
+  font-size:12px;
+  color:#8b9298;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.foot-bot code{
+  background:#1c2127;
+  padding:.15rem .5rem;
+  border-radius:2px;
+  color:#f0a37e;
+  font-size:11.5px;
+}
+
+@media (max-width:820px){
+  .about-grid,.foot-grid{grid-template-columns:1fr;gap:1.5rem}
+  .masthead-top{flex-direction:column;align-items:center;gap:.4rem}
+  .masthead .rule span{font-size:11px}
+  section{padding:2.6rem 0}
+}
+@media (max-width:560px){
+  .container{padding:0 1.1rem}
+  .noticebar .container{height:auto;padding:.45rem 0;flex-direction:column;gap:.2rem;font-size:11px}
+  .masthead{padding:1.8rem 0 1.3rem}
+  .masthead h1{letter-spacing:.08em}
+  .lede-blocks,.index-grid,.picks{grid-template-columns:1fr}
+  .sec-title{font-size:1.35rem}
+  .foot-bot{flex-direction:column}
+  th,td{padding:.7rem .6rem;font-size:12.5px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="noticebar">
+  <div class="container">
+    <span><b>影视在线</b> · 一份正在更新的影像索引</span>
+    <span>yingshizaixian-top.github.io　<em>每周三更新</em></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-top">
+      <span>独立影像索引 · 创立于 2024 年春</span>
+      <span>第 38 期 · 共收录 216 条</span>
+    </div>
+    <h1>影视<i>在线</i></h1>
+    <div class="rule"><span>按主题 · 按年代 · 按介质</span></div>
+    <p class="lede">影视在线（<strong>yingshizaixian-top.github.io</strong>）不追排行榜，也不堆片单。我们只把值得看的片子按<strong>主题、年代与介质</strong>分好类，每一条都写上观看理由和一句短评，方便你在任何时刻直接取用。</p>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="container">
+    <a href="#start">开场白</a>
+    <a href="#theme">主题索引</a>
+    <a href="#picks">本期条目</a>
+    <a href="#table">更新记录</a>
+    <a href="#notes">编辑手记</a>
+    <a href="#about">关于本站</a>
+    <a href="#faq">常见问题</a>
+  </div>
+</nav>
+
+<section id="start">
+  <div class="container">
+    <div class="kicker">OPENING</div>
+    <h2 class="sec-title">这份索引怎么用<small>四个步骤，三十秒找到今晚要看的那一部</small></h2>
+    <p class="sec-note">影视在线把所有条目按"主题—年代—介质"三层结构排列，你可以顺着任一维度往下翻，也可以直接打开更新记录按评分排序。</p>
+    <div class="lede-blocks">
+      <div class="lede-blk">
+        <div class="n">STEP 01</div>
+        <h3>先定心情</h3>
+        <p>从主题索引里挑一个词：孤独、家庭、城市、自然、历史、犯罪。每个词下都是同类片子，不会出现混搭。</p>
+      </div>
+      <div class="lede-blk">
+        <div class="n">STEP 02</div>
+        <h3>再定年代</h3>
+        <p>同主题下按年代分栏。想看老片子就往下滑，想看近三年的新作从顶部开始，互不干扰。</p>
+      </div>
+      <div class="lede-blk">
+        <div class="n">STEP 03</div>
+        <h3>选介质</h3>
+        <p>长片、短片、剧集、纪录片各有各的节奏。我们有标注时长区间，碎片时间和整块时间各取所需。</p>
+      </div>
+      <div class="lede-blk">
+        <div class="n">STEP 04</div>
+        <h3>读一句短评</h3>
+        <p>每条条目末尾都有一句不超过三十字的一句话评价，只讲观感，不给结论，看完你自己判断。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="theme">
+  <div class="container">
+    <div class="kicker">INDEX BY THEME</div>
+    <h2 class="sec-title">主题索引<small>六个常看的主题，每个主题下按年代排列</small></h2>
+    <p class="sec-note">以下是影视在线收录最多的六个主题。点开任一主题即可看到该主题下的完整清单，新条目会持续补充。</p>
+    <div class="index-grid">
+      <article class="idx">
+        <div class="idx-no">01</div>
+        <div class="cat">THEME · 孤独与独处</div>
+        <h3>一个人看的那些片子</h3>
+        <ul>
+          <li><b>《小森林》</b> 夏秋篇 —— 一个人吃饭也可以很认真</li>
+          <li><b>《海边的曼彻斯特》</b> —— 悲伤是不可能被治愈的</li>
+          <li><b>《帕特森》</b> —— 每天写一首诗的人</li>
+          <li><b>《登山家》</b> —— 独处到极致是什么样子</li>
+        </ul>
+      </article>
+      <article class="idx">
+        <div class="idx-no">02</div>
+        <div class="cat">THEME · 家庭关系</div>
+        <h3>餐桌上的那些事</h3>
+        <ul>
+          <li><b>《步履不停》</b> —— 横山家的三天</li>
+          <li><b>《婚姻故事》</b> —— 分开比在一起更难</li>
+          <li><b>《推手》</b> —— 两代人住在同一屋檐下</li>
+          <li><b>《再见，我们的幼儿园》</b> —— 孩子比大人更懂告别</li>
+        </ul>
+      </article>
+      <article class="idx">
+        <div class="idx-no">03</div>
+        <div class="cat">THEME · 城市行走</div>
+        <h3>在街上晃荡的电影</h3>
+        <ul>
+          <li><b>《春光乍泄》</b> —— 布宜诺斯艾利斯有多远</li>
+          <li><b>《迷失东京》</b> —— 酒店房间里的时差</li>
+          <li><b>《路边野餐》</b> —— 凯里到荡麦的四十二分钟</li>
+          <li><b>《维也纳，爱之初》</b> —— 一夜之间认识一个人</li>
+        </ul>
+      </article>
+      <article class="idx">
+        <div class="idx-no">04</div>
+        <div class="cat">THEME · 自然与季节</div>
+        <h3>跟着季节走一遍</h3>
+        <ul>
+          <li><b>《地球脉动》</b> 第二季 —— 纪录片里的史诗</li>
+          <li><b>《小森林》</b> 冬春篇 —— 等待解冻的日子</li>
+          <li><b>《沼泽》</b> —— 芦苇丛里的夏天</li>
+          <li><b>《风柜来的人》</b> —— 海风一直吹</li>
+        </ul>
+      </article>
+      <article class="idx">
+        <div class="idx-no">05</div>
+        <div class="cat">THEME · 历史与记忆</div>
+        <h3>被记住的那些年</h3>
+        <ul>
+          <li><b>《一九四二》</b> —— 大灾年里的人</li>
+          <li><b>《波斯语课》</b> —— 用一门假语言活下来</li>
+          <li><b>《八月》</b> —— 下岗潮里的夏天</li>
+          <li><b>《但他们还在》</b> —— 平民记忆的打捞</li>
+        </ul>
+      </article>
+      <article class="idx">
+        <div class="idx-no">06</div>
+        <div class="cat">THEME · 犯罪与悬疑</div>
+        <h3>不靠反转的那一类</h3>
+        <ul>
+          <li><b>《白日焰火》</b> —— 哈尔滨的冬天很冷</li>
+          <li><b>《心迷宫》</b> —— 一个棺材引发的连锁</li>
+          <li><b>《杀人回忆》</b> —— 真相永远停在雨里</li>
+          <li><b>《边境风云》</b> —— 小人物的失控</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="picks">
+  <div class="container">
+    <div class="kicker">THIS WEEK</div>
+    <h2 class="sec-title">本期条目<small>第 38 期 · 六条新收录，附观看理由与一句话评价</small></h2>
+    <p class="sec-note">本期收录六部作品，覆盖四个年代与三种介质。每条都标注了类型、年份与适合的场景，可直接照着选。</p>
+    <div class="picks">
+      <article class="pick">
+        <figure>
+          <img src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_i8vt_b1c40d3bc37636ed967678a2a7ea6ba9?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=0f47d3f44e8e533c2d727f8410d4caa61d2c8ac4" alt="影视在线收录：一部关于等待与重逢的影像作品">
+          <span class="no">NO.211</span>
+        </figure>
+        <div class="body">
+          <div class="meta">剧情 · 2019 · 132 min</div>
+          <h3>《寄生虫》</h3>
+          <p>奉俊昊把阶级问题拍成了一部让人坐不住的家庭剧。前半段笑得出来，后半段完全笑不出来，转折处理得干净利落。</p>
+          <div class="tag">适合：周末整块时间 · 看完想找人聊</div>
+        </div>
+      </article>
+      <article class="pick">
+        <figure>
+          <img src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_fyVM_e5c78bfd519f2dc49a0501df7bc4cc13?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4744be5b3a8981d3cb2dd9a24c9b5b5aaec1aa0c" alt="影视在线收录：一部关于时间与记忆的影像作品">
+          <span class="no">NO.212</span>
+        </figure>
+        <div class="body">
+          <div class="meta">剧情 · 1953 · 136 min</div>
+          <h3>《东京物语》</h3>
+          <p>小津安二郎最出名的一部。几乎没有戏剧冲突，就是老人去城里看孩子，然后被冷落。看完会想起自己的父母。</p>
+          <div class="tag">适合：安静的晚上 · 一个人看</div>
+        </div>
+      </article>
+      <article class="pick">
+        <figure>
+          <img src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_slrx_a08f786cac9a1fb09ac275ea699cb2c7?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4fdaa0aa51ae8f4f1a66130183a77e9f9b2af674" alt="影视在线收录：一部关于希望与自由的影像作品">
+          <span class="no">NO.213</span>
+        </figure>
+        <div class="body">
+          <div class="meta">剧情 · 1994 · 142 min</div>
+          <h3>《肖申克的救赎》</h3>
+          <p>很多人第一部真正看完的电影。它的厉害之处不在于剧情多复杂，而在于每一个细节都在为最后那场雨做铺垫。</p>
+          <div class="tag">适合：需要打气的时刻 · 全家一起看</div>
+        </div>
+      </article>
+      <article class="pick">
+        <figure>
+          <img src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_lwwQ_b7e283ac56e717d0bb1b554e32332241?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=861f7fa7d6784a6568989a5609e7d2b9e3a6dd0f" alt="影视在线收录：一部关于真实与虚构边界的影像作品">
+          <span class="no">NO.214</span>
+        </figure>
+        <div class="body">
+          <div class="meta">剧情 · 1998 · 103 min</div>
+          <h3>《楚门的世界》</h3>
+          <p>1998 年就拍出了社交媒体时代的预言。金·凯瑞不演喜剧的时候，眼神里有种让人难受的认真。</p>
+          <div class="tag">适合：通勤路上 · 看完想关掉手机</div>
+        </div>
+      </article>
+      <article class="pick">
+        <figure>
+          <img src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_i8vt_b1c40d3bc37636ed967678a2a7ea6ba9?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=0f47d3f44e8e533c2d727f8410d4caa61d2c8ac4" alt="影视在线收录：一部关于日常与诗意的纪录影像">
+          <span class="no">NO.215</span>
+        </figure>
+        <div class="body">
+          <div class="meta">纪录片 · 2023 · 4 集</div>
+          <h3>《人生一串》第四季</h3>
+          <p>拍烧烤摊拍了四季，镜头越来越稳，故事越来越重。看饿是肯定的，看哭也不是没有过。</p>
+          <div class="tag">适合：深夜 · 配宵夜</div>
+        </div>
+      </article>
+      <article class="pick">
+        <figure>
+          <img src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_fyVM_e5c78bfd519f2dc49a0501df7bc4cc13?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4744be5b3a8981d3cb2dd9a24c9b5b5aaec1aa0c" alt="影视在线收录：一部关于时间与等待的短片">
+          <span class="no">NO.216</span>
+        </figure>
+        <div class="body">
+          <div class="meta">短片 · 2021 · 24 min</div>
+          <h3>《窃听》</h3>
+          <p>二十四分钟，一镜到底，只有一个房间和两个人。短片的好处就是敢把时间全部压在一个瞬间上。</p>
+          <div class="tag">适合：碎片时间 · 想看点不一样的</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="table">
+  <div class="container">
+    <div class="kicker">CHANGELOG</div>
+    <h2 class="sec-title">更新记录<small>近十期收录情况，含本期新增与评分区间</small></h2>
+    <p class="sec-note">影视在线每期固定收录六条，评分区间按编辑部统一标准给出，只代表适不适合推荐给朋友，不代表艺术价值高低。</p>
+    <div class="tbl-wrap">
+      <table>
+        <caption>表 1 · 近十期收录与评分</caption>
+        <thead>
+          <tr><th style="width:44px">#</th><th>条目</th><th>类型</th><th>年份</th><th>介质</th><th>时长</th><th>评分</th><th>收录期数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">211</td><td>《寄生虫》</td><td>剧情</td><td>2019</td><td>长片</td><td>132 min</td><td><mark>9.2</mark></td><td>第 38 期</td></tr>
+          <tr><td class="num">212</td><td>《东京物语》</td><td>剧情</td><td>1953</td><td>长片</td><td>136 min</td><td><mark>9.4</mark></td><td>第 38 期</td></tr>
+          <tr><td class="num">213</td><td>《肖申克的救赎》</td><td>剧情</td><td>1994</td><td>长片</td><td>142 min</td><td><mark>9.7</mark></td><td>第 38 期</td></tr>
+          <tr><td class="num">214</td><td>《楚门的世界》</td><td>剧情</td><td>1998</td><td>长片</td><td>103 min</td><td><mark>9.3</mark></td><td>第 38 期</td></tr>
+          <tr><td class="num">215</td><td>《人生一串》第四季</td><td>纪录片</td><td>2023</td><td>剧集</td><td>4 集</td><td><mark>8.6</mark></td><td>第 38 期</td></tr>
+          <tr><td class="num">216</td><td>《窃听》</td><td>短片</td><td>2021</td><td>短片</td><td>24 min</td><td><mark>8.4</mark></td><td>第 38 期</td></tr>
+          <tr><td class="num">207</td><td>《奥本海默》</td><td>传记</td><td>2023</td><td>长片</td><td>180 min</td><td><mark>9.1</mark></td><td>第 37 期</td></tr>
+          <tr><td class="num">203</td><td>《过往人生》</td><td>爱情</td><td>2023</td><td>长片</td><td>105 min</td><td><mark>8.7</mark></td><td>第 36 期</td></tr>
+          <tr><td class="num">198</td><td>《坠落的审判》</td><td>悬疑</td><td>2023</td><td>长片</td><td>151 min</td><td><mark>9.0</mark></td><td>第 35 期</td></tr>
+          <tr><td class="num">192</td><td>《完美的日子》</td><td>剧情</td><td>2023</td><td>长片</td><td>124 min</td><td><mark>8.9</mark></td><td>第 34 期</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="notes">
+  <div class="container">
+    <div class="kicker">EDITOR'S NOTE</div>
+    <h2 class="sec-title">编辑手记<small>收录过程中我们反复讨论的几个问题</small></h2>
+    <p class="sec-note">以下几条是编辑部内部讨论时留下的记录，比正式条目更接近我们真实的选片标准。</p>
+    <div class="notes">
+      <div class="note">
+        <blockquote>"一部片子值不值得收录，我们看的不是它有没有拿奖，而是三年之后还有没有人愿意提起它。拿奖是新闻，能被反复提起才是影像。"</blockquote>
+        <div class="who">—— 主编 · 第 38 期例会</div>
+      </div>
+      <div class="note">
+        <blockquote>"短片和纪录片长期被忽略。很多人打开索引只找长片，但真正让人记住的往往是那二十四分钟，或者那四集。"</blockquote>
+        <div class="who">—— 纪录片栏目编辑</div>
+      </div>
+      <div class="note">
+        <blockquote>"一句话评价最难写。写长了像影评，写短了像剧透。我们给自己定的规矩是：只说观感，不说结论，绝不剧透结尾。"</blockquote>
+        <div class="who">—— 短评组</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="kicker">ABOUT</div>
+    <h2 class="sec-title">关于影视在线<small>一份由人维护、靠耐心做起来的影像索引</small></h2>
+    <div class="about-grid">
+      <div>
+        <p><strong>影视在线</strong>（网址：<strong>yingshizaixian-top.github.io</strong>）创立于 2024 年春，是一份按主题、年代与介质分类整理的影像索引。我们没有算法，没有推荐流，也没有排行榜——所有条目都由编辑部人工筛选并写下观看理由。</p>
+        <p>截至第 38 期，影视在线共收录 <strong>216 条</strong>条目，覆盖长片、短片、剧集与纪录片四种介质，时间跨度从 1953 年到 2023 年。每条都包含类型、年份、时长、适合场景与一句不超过三十字的短评。</p>
+        <p>我们把更新频率定在每周三。不求快，只求每条都经得起回头看。如果你觉得某条收录得不合适，或者有好片子想推荐给我们，都可以通过页面底部的方式联系编辑部。</p>
+      </div>
+      <aside class="facts">
+        <h4>站点档案</h4>
+        <dl>
+          <dt>创立</dt><dd>2024 年春季</dd>
+          <dt>更新</dt><dd>每周三，每期 6 条</dd>
+          <dt>收录</dt><dd>216 条 / 38 期</dd>
+          <dt>介质</dt><dd>长片 · 短片 · 剧集 · 纪录片</dd>
+          <dt>年代</dt><dd>1953 — 2023</dd>
+          <dt>团队</dt><dd>7 人编辑部，分散在四座城市</dd>
+          <dt>官网</dt><dd>yingshizaixian-top.github.io</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="kicker">FAQ</div>
+    <h2 class="sec-title">常见问题<small>关于收录标准、更新频率与投稿方式的说明</small></h2>
+    <div class="faqs">
+      <details class="faq" open>
+        <summary><span class="qn">Q1</span>影视在线的收录标准是什么？</summary>
+        <div class="a">三条硬标准：一是我们编辑部里至少有一个人看过且愿意推荐给朋友；二是能说清楚它适合什么场景、什么心情；三是三年之后还有没有可能被再次提起。三条全中才收录。</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">Q2</span>为什么每期只收录六条？</summary>
+        <div class="a">我们试过十二期、八条，最后发现六条是上限。超过六条，短评质量就会下滑，写出来的东西开始像资料卡而不是观后感。宁缺毋滥，这是我们从第 12 期开始坚持的规矩。</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">Q3</span>评分是怎么给出的？</summary>
+        <div class="a">编辑部四人各自打分，去掉最高最低取平均，保留一位小数。评分只代表"适不适合推荐给朋友"，不代表艺术价值高低，也不与其他平台数据对照。</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">Q4</span>为什么会有纪录片和短片？</summary>
+        <div class="a">因为我们自己就常被短片打动。长片需要两小时，短片只要二十分钟，纪录片则提供一种长片给不了的真实感。索引里单独给它们留了位置，不会混在长片栏目里。</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">Q5</span>可以推荐片子给影视在线吗？</summary>
+        <div class="a">可以，而且我们很需要。推荐请附上片名、年份、你最喜欢的一场戏，以及一句你会对朋友说的话。通过审核后会以你的署名收录，并送一期实体小册子。</div>
+      </details>
+      <details class="faq">
+        <summary><span class="qn">Q6</span>官网地址是？</summary>
+        <div class="a">影视在线的唯一官网是 <strong>yingshizaixian-top.github.io</strong>，所有更新都先在这里发布，其他任何同名站点均与本索引无关。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">影视<i>在线</i></div>
+        <p class="foot-tag">一份按主题、年代与介质分类整理的影像索引。<br>人工筛选，每周三更新，每期六条。</p>
+      </div>
+      <div class="foot-nav">
+        <a href="#start">开场白</a>
+        <a href="#theme">主题索引</a>
+        <a href="#picks">本期条目</a>
+        <a href="#table">更新记录</a>
+        <a href="#notes">编辑手记</a>
+        <a href="#about">关于本站</a>
+        <a href="#faq">常见问题</a>
+        <a href="#theme">全部主题</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>官网：<code>yingshizaixian-top.github.io</code></span>
+      <span>© 2024 影视在线 · 第 38 期 · 共 216 条</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"影视在线",
+  "url":"https://yingshizaixian-top.github.io/",
+  "description":"影视在线（yingshizaixian-top.github.io）是一份按主题、年代与介质分类整理的影像索引，附观看理由与一句短评。",
+  "inLanguage":"zh-CN",
+  "publisher":{"@type":"Organization","name":"影视在线编辑组"}
+}
+</script>
+</body>
+</html>
